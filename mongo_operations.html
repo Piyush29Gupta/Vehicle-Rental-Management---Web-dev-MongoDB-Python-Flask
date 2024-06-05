@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+body{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.nav-bar{
+        padding-top: 0px;
+        margin-top: 0px;
+        position: absolute;
+        height: 98vh;
+        width: 100%;
+        background-color:aquamarine;
+        border: 2px solid white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+
+        background-image: url('https://img.freepik.com/free-photo/white-sport-sedan-with-colorful-tuning-road_114579-5044.jpg?t=st=1713936817~exp=1713940417~hmac=47df926186a02e5cda360742f9b55616c3ec1221413972acd28a0886ad3bd804&w=996');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+.nav-bar-ele{
+        margin-top: 10px;
+        margin-left: 50px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid black;
+        cursor: pointer;
+        width: 120px;  
+        height: 40px;
+        
+}
+
+#view_all_costumer{
+    width: 130px;
+}
+
+#remove_vehicle
+{
+    width: 150px;  
+}
+
+.upper-nav-bar{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.most-lower-nav-bar{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.lower-nav-bar{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-left: 5px;
+}
+
+.rent-list {
+    position: absolute;
+    top: 70px; /* Adjust this value to position the list below the nav bar */
+    left: 17%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#deposit_amt{
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+#update_hours{
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+#deposit_amt_btn{
+    height: 30px;
+    width: 100px;
+    margin-left: 200px;
+    border: none;
+    border-radius: 15px;
+}
+
+.div-vehicle{
+    margin-top: 20px;
+    display: flex;
+}
+/* 
+#delete_details{
+
+    margin-top: 50px;
+    margin-left: 170px;
+
+} */
+
+input:hover{
+    transform: scale(1.1);
+}
+
+
+</style>
+
+<body>
+
+    <div class="nav-bar">
+           
+        <div class="upper-nav-bar">
+
+         <div >
+             <input id="rent-list_btn" type="submit" value="Rent List" class="nav-bar-ele" >
+         </div>
+
+         <div >
+             <form action="/show_details" method="POST">
+                 <input id="show_details" type="submit" value="Show Details" class="nav-bar-ele" >
+             </form>
+         </div>
+
+         <div >
+             <form action="/show_rent_amount" method="POST">
+                <input id="show_rent" type="submit" value="Rent Amount" class="nav-bar-ele">
+             </form>
+         </div>
+
+         <div >
+            <form action="/deposit_rent_amount" method="POST" >
+                <input id="deposit_rent" type="submit" value="Deposit Rent" class="nav-bar-ele">
+                <input type="number" id="deposit_amt" name="deposit_amount" placeholder="Enter Deposit Amount">
+                <!-- <br>    
+                <button type="submit" value="Submit" name="depoist_amt_btn" id="depoist_amt_btn"></button> -->
+            </form>
+             
+         </div>
+
+        </div>
+         
+        <div class="lower-nav-bar">
+
+         <div >
+             <form action="/due_rent_amount" method="POST">
+                <input id="due_rent" type="submit" value="Due Rent" class="nav-bar-ele">
+             </form>
+         </div>
+
+         <div >
+             <form action="/add_vehicle" method="POST">
+                <input id="add_vehicle" type="submit" value="Add Vehicle" class="nav-bar-ele">
+                <div class="div-vehicle">
+                    <select multiple size="7" name="vehicle" id="vehicle" aria-placeholder="select a vehicle">
+                    <option value="" selected disabled>Select Multiple Vehicle Using Ctrl</option>
+                    <option value="CAR">CAR</option>
+                    <option value="BIKE">BIKE</option>
+                    <option value="SCOOTY">SCOOTY</option>
+                    <option value="CYCLE">CYCLE</option>
+                    <option value="MINI-BUS">MINI-BUS</option>
+                </select>
+                </div>
+             </form>
+         </div>
+
+         
+
+         <div >
+            <form action="/remove_vehicle" method="POST">
+               <input id="remove_vehicle" type="submit" value="Remove Vehicle" class="nav-bar-ele">
+               <div class="div-vehicle">
+                   <select multiple size="7" name="vehicle" id="vehicle" aria-placeholder="select a vehicle">
+                   <option value="" selected disabled>Select Multiple Vehicle Using Ctrl</option>
+                   <option value="CAR">CAR</option>
+                   <option value="BIKE">BIKE</option>
+                   <option value="SCOOTY">SCOOTY</option>
+                   <option value="CYCLE">CYCLE</option>
+                   <option value="MINI-BUS">MINI-BUS</option>
+               </select>
+               </div>
+            </form>
+        </div>
+
+         <div >
+             <form action="/update_hours" method="POST">
+                <input id="update_hours_btn" type="submit" value="Update Hours" class="nav-bar-ele">
+                <input type="number" id="update_hours" name="update_hours" placeholder="Enter New Hours">
+             </form>
+         </div>
+
+        </div>
+
+
+        <div class="most-lower-nav-bar">
+
+            <div>
+                <form action="/view_vehicle" method="POST">
+                    <input type="submit" name="view_vehicle" id="view_vehicle" class="nav-bar-ele" value="View Vehicles">
+                </form>
+            </div>
+
+            <div>
+                <form action="/view_all_costumer" method="POST">
+                    <input type="submit" name="view_all_costumer" id="view_all_costumer" class="nav-bar-ele" value="View All Costumer">
+                </form>
+            </div>
+
+            <div>
+                <form action="/delete_details" method="POST">
+                    <input type="submit" name="delete_details" id="delete_details" class="nav-bar-ele" value="Delete Details">
+                </form>
+            </div>
+
+            <div>
+                <form action="/delete_acc" method="POST">
+                    <input type="submit" name="delete_acc" id="delete_acc-btn" class="nav-bar-ele" value="Delete Account">
+                </form>
+            </div>
+            
+
+        </div>
+         
+
+     <!-- <div class="div-rent-list" id="popup">
+         <h1 onclick="closePopup()">X</h1>
+         <form action="">
+
+             <label for="Rent_List">Vehicle Rent List</label>
+             
+             <h3>Car      - 200/hr</h3>
+             <h3>Bike     - 100/hr</h3>
+             <h3>Scooty   - 80/hr</h3>
+             <h3>Cycle    - 50/hr</h3>
+             <h3>Mini-Bus - 500/hr</h3>
+         </form>
+     </div> -->
+     
+     
+
+ </div>
+
+ <div class="rent-list" style="display: none;">
+     <h3>Vehicle Rent List</h3>
+     <ul>
+         <li>Car - 200/hr</li>
+         <li>Bike - 100/hr</li>
+         <li>Scooty - 80/hr</li>
+         <li>Cycle - 50/hr</li>
+         <li>Mini-Bus - 500/hr</li>
+     </ul>
+ </div>
+
+ 
+    
+</body>
+
+
+<script>
+    const rentListBtn = document.getElementById('rent-list_btn');
+    const rentList = document.querySelector('.rent-list');
+
+    rentListBtn.addEventListener('click', () => {
+        rentList.style.display = rentList.style.display === 'none' ? 'block' : 'none';
+    });
+</script>
+
+</html>

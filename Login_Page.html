@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <!-- <link rel="stylesheet" href="/static/login.css"> -->
+
+</head>z
+
+<style>
+
+
+
+body{
+    background-color:rgb(232, 201, 207);
+    
+}
+
+.clock{
+    width: 100px;
+    height: 30px;
+    position: fixed;
+    bottom:5px;
+    right: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    text-align: center;
+    font-weight:bolder;
+}
+
+.container{
+    display:flex;
+    margin-top: 130px;
+    margin-left: 480px;        
+    
+    
+
+    height: 400px;
+    width: 600px;
+
+    animation-name: main-box;
+    animation-duration: 2s;
+    
+    
+}
+
+
+.container:hover
+{
+    border-radius: 10px 10px 10px 10px;
+    transform: scale(1.01);
+    
+}
+
+#box1:hover{
+    border-radius: 10px 10px 10px 10px;
+    transform: scale(1.1);
+    transition: ease-in 0.3s;
+}
+
+#box2:hover{
+    border-radius: 10px 10px 10px 10px;
+    transform: scale(1.1);
+    transition: ease-in 0.3s;
+}
+
+@keyframes main-box {
+    
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+    
+}
+
+
+.box{
+    
+    height: 400px;
+    width: 300px;
+    
+}
+
+
+.circle-container{
+    display: flex;
+    padding-left: 100px;
+
+}
+
+.circle{
+    
+    
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    border-radius: 50%;
+    
+    cursor: pointer;
+}
+
+.circle:hover{
+    transform: scale(1.15);
+}
+
+#circle1{
+    background-image: url('https://img.freepik.com/premium-vector/gradient-instagram-logo-social-media-app-button_197792-9450.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#circle2{
+    background-image: url('https://img.freepik.com/premium-photo/round-linkedin-logo-isolated-white-background_469489-1046.jpg?size=338&ext=jpg&ga=GA1.1.1224184972.1713830400&semt=ais');
+    background-size: cover;
+    background-position: center;
+    margin-left:15px;
+} 
+
+#box1{
+
+    background-color: whitesmoke;
+    border-radius: 10px 0px 0px 10px;
+    text-align: center;
+    
+}
+
+h1{
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+input{
+    
+    border: 0px;
+    outline: none;
+    width: 60%;
+    height: 26px;
+    margin-left: 5%;
+    background-color: rgb(218, 214, 214) ;
+}
+
+#login{
+    margin-top: 50px;
+}
+
+#password{
+    margin-top: 15px;
+}
+
+#forgot{
+    border: 0px;
+    margin-top: 20px;   
+    background-color:unset;
+    font-size:12px; 
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+#box2
+{
+    
+    border-radius: 0px 10px 10px 0px;
+    background-color:lightcoral;
+    text-align: center;      
+}
+
+#box2 h1{
+    padding-top: 90px;
+}
+
+
+.login-button
+{
+    background-color: lightcoral;
+    margin-left: 20px;
+    padding-top: 5px;
+    height: 25px;
+    width: 100px;
+    border-radius: 15px;
+    border: 1.5px solid black;
+    cursor:pointer;
+    
+}
+/* .sign-in
+{
+    background-color: lightcoral;
+    margin-left: 100px;
+    margin-top: 15px;
+    border: 1.5px solid black;
+    padding-top: 5px;
+    height: 25px;
+    width: 100px;
+    border-radius: 15px;
+    cursor:pointer;
+} */
+#sign-in-button{
+    background-color: lightcoral;
+    margin-left: 20px;
+    margin-top: 15px;
+    border: 1.5px solid black;
+    padding-top: 5px;
+    height: 25px;
+    width: 100px;
+    border-radius: 15px;
+    cursor:pointer;
+}
+
+#sign-in-button:hover{
+    transform: scale(1.13);
+    box-shadow: 0px -1px 10px 10px rgb(232, 201, 207);
+}
+
+.login-button:hover{
+    transform: scale(1.13);
+    box-shadow: 0px -1px 10px 10px rgb(232, 201, 207);
+}
+
+
+    
+
+
+</style>
+
+    
+
+
+
+<body>
+
+    <div >
+        <input disabled class="clock" type="text" id="time-clock">
+    </div>
+
+    
+
+    <script>
+       
+        function clock()
+        {
+            var time = new Date();
+            var t = time.toLocaleTimeString();
+            document.getElementById("time-clock").value=t;
+        }
+
+        setInterval(clock,1000);
+
+    </script>
+    
+
+    <div class="container">
+
+        <div class="box" id="box1">
+
+            <h1> Login </h1>
+
+            
+            
+            
+
+            <div class="circle-container">
+
+                <form action="" method="POST">
+                    <a href="https://www.instagram.com/p_ush_20/" >                     
+                        <div class="circle" id="circle1">
+                        </div>
+                        
+                    </a>
+                </form>
+
+                <a href="https://www.linkedin.com/in/piyush-gupta-aab999237/">
+
+                    <div class="circle" id="circle2">
+                    </div>
+
+                </a>
+                
+            </div>
+
+            <form name="frm1" action="/submit" method="POST" >
+
+                <div class="text-box" id="login">
+                    <input type="email" placeholder="Email" name="login_id" required>
+                </div>
+    
+                <div class="text-box" id="password">
+                    <input type="password" placeholder="Password" name="login_pwd" required>
+                </div>
+    
+                    <a href="">
+                        <button id="forgot"> Forgot your password?</button>
+                    </a>
+                        <br> <br>
+
+                    <div >
+                        <input class="login-button" type="submit" name="submit-button" value="Submit">
+                        
+                    </div>
+
+            </form> 
+            <form action="/sign_in" method="POST">
+                <!-- <div class="sign-in"> -->
+                    <!-- <submit > Sign - In</submit> -->
+                    <input type="submit" name="sign-in" value="sign-up" id="sign-in-button">
+                <!-- </div> -->
+            </form>
+        </div>
+
+        
+        
+
+<!-- 
+        <script language="javascript">
+            function checkDetail()
+            {
+                var userid= document.frm1.userid.value;
+                var userpwd = document.frm1.userpwd.value;
+
+                if(userid==="piyushgupta@gmail.com" && userpwd ==="piyush123456")
+                {
+                    // alert("User details is correct");
+                    window.location.href = "";
+                }
+
+                else{
+                    alert("User details is incorrect");
+                    
+                }
+
+
+            }
+
+
+            function signin()
+            {
+                
+                    window.location.href = "./details.html";
+
+            }
+        </script>
+         -->
+
+        <div class="box" id="box2">
+
+            <h1>  Vehicle  <br> Rental System</h1>
+            
+            <p> Welcome to Vehicle Rental System. Login Or Register And Rent Vehicles </p>
+
+        </div>
+
+
+    </div>
+
+    
+    
+
+    
+</body>
+</html>

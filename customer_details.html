@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>vehicle rental system</title>
+</head>
+
+<style>
+
+    body{
+        background-color:#f0f8ff;
+        padding: 0;
+        margin: 0;
+        height: auto;
+        
+    }
+
+    .body-box{
+        height: 100vh;
+        width: 100wh;
+
+        top: 0px;
+
+        
+
+        background-image: url('https://img.freepik.com/free-photo/man-standing-beside-motorcycle-with-helmet_23-2148875786.jpg?t=st=1713936165~exp=1713939765~hmac=499d7fccc99a67e6dd8420cfcef9e5a1ead40c1785023cae0a7f42cb5bd0d4ec&w=996');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+        height: 115vh;
+        padding-top: 30px;
+
+        opacity: 0.9;
+        
+    }
+
+    .container{
+        width: 33%;
+        height: 115vh;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-left: 36%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color:whitesmoke;
+    }
+
+    h1{
+        text-align: center;
+        color:darkslategray;
+    }
+    
+    .frm{
+        display: flex;
+        flex-direction: column;
+    }
+
+    label{
+        margin-top: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size:20px;
+        font-weight: bold;
+        color:black;
+        margin-left: 20px;
+    }
+
+    input,select{
+        margin-left: 20px;
+        width: 80%;
+        height: 35px;
+        border-radius: 10px;
+        padding-left: 10px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    input:hover{
+        border-color: #49bc2d;
+        outline: none;
+    }
+
+    select:hover{
+        border-color: #49bc2d;
+        outline: none;
+    }
+
+    #vehicle{
+        height: 105px;
+    }
+
+    #button{
+        margin-top: 30px;
+        margin-left: 35%;
+        height: 40px;
+        width: 100px;
+    }
+
+    #button:hover{
+        transform: scale(1.2);
+    }
+
+    .header{
+        width: 100%;
+        height: 50px;
+        background-color: beige;
+    }
+
+    #button-goto-mongo_operations{
+        margin-top: 30px;
+        margin-left: 35%;
+        height: 40px;
+        width: 100px;
+    }
+    
+    
+/*
+    .div-rent-list{
+        border: 2px solid black;
+        height: auto;
+        width: 200px;
+        margin-left: 15px;
+        margin-top: 12px;
+        border-radius: 15px;
+        visibility: hidden;
+        display: flex;
+    }
+
+    .div-rent-list h3{
+        margin-left: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .div-rent-list label{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: darkorchid;
+    }
+
+    .open-popup{
+    visibility: visible;
+    top: 20%;
+}
+
+.div-rent-list h1{
+    display: inline;
+    cursor: pointer;
+    height: fit-content;
+} */
+
+/* #rent-list_btn{
+        margin-top: 10px;
+        margin-left: 75px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid black;
+        cursor: pointer;
+        width: 100px;
+    } */
+
+ 
+
+
+
+
+
+</style>
+
+
+<body>
+    
+    <div class="body-box">
+        <div class="container">
+            <div class="header"><h1>Vehicle Rental System</h1></div>
+
+            
+            <form class="frm" action="/submit_form" method="POST">
+                
+                <label for="First Name">First Name:</label>
+                <input type="text" name="first_name" placeholder="Enter First Name" >
+
+                <label for="Last Name">Last Name:</label>
+                <input type="text" name="last_name" placeholder="Enter Last Name">
+
+                <label for="Age">Age:</label>
+                <input type="number" name="age" placeholder="Enter Age" min="18" max="85">
+
+                <label for="Licence">Licence:</label>
+                <input type="text" name="licence" placeholder="Enter Licence Number">
+
+                <label for="Vehicle">Vehicle:</label>
+                <select multiple size="10" name="vehicle" id="vehicle" aria-placeholder="select a vehicle">
+                    <option value="" selected disabled>Select Multiple Vehicle Using Ctrl</option>
+                    <option value="CAR">CAR</option>
+                    <option value="BIKE">BIKE</option>
+                    <option value="SCOOTY">SCOOTY</option>
+                    <option value="CYCLE">CYCLE</option>
+                    <option value="MINI-BUS">MINI-BUS</option>
+                </select>
+
+                <label for="Hours">Hours:</label>
+                <input type="number" name="hours" placeholder="Enter Hours For Rent Vehicle" max="360">
+
+                <input type="submit" id="button" name="Submit" value="Submit">
+
+            </form>
+
+            <form action="/goto_mongo_operations_from_customer_details" method="POST">
+                <input type="submit" id="button-goto-mongo_operations"  value="Enter">
+            </form>
+
+
+        </div>
+    </div>
+
+        
+
+</body>
+
+<!-- <script>
+
+let popup = document.getElementById("popup")
+
+function pop_up(){
+    popup.classList.add("open-popup")
+    document.addEventListener("click", handleClickOutside);
+}
+
+function closePopup(){
+    popup.classList.remove("open-popup")
+
+}
+
+</script> -->
+
+
+
+</html>

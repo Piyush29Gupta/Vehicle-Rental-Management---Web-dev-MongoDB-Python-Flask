@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+</head>
+<body ng-app>
+    <h1>Customer Details</h1>
+    <div>
+        <p><strong>First Name:</strong> {{ customer_details.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ customer_details.last_name }}</p>
+        <p><strong>Age:</strong> {{ customer_details.age }}</p>
+        <p><strong>Licence:</strong> {{ customer_details.licence }}</p>
+        <p><strong>Vehicles:</strong></p>
+        <ul>
+            {% for vehicle in customer_details.vehicles %}
+                <li>{{ vehicle.vehicle }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Hours:</strong> {{ customer_details.hours }}</p>
+    </div>
+</body>
+</html>
